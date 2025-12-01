@@ -1,0 +1,28 @@
+<div class="h-full w-full flex justify-center items-center bg-[linear-gradient(0deg,_rgba(255,255,255,1)_0%,_rgba(238,0,0,1)_100%)] select-none">
+  <div class="min-w-[400px] min-h-[300px] p-10 bg-white shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),_0_8px_10px_-6px_rgba(0,0,0,0.1)] rounded-lg">
+    <div class="flex justify-center items-center text-[32px] gap-1">
+      <div class="w-[32px] h-[32px] bg-[url('/assets/images/favicon.ico')] bg-contain bg-no-repeat bg-center"></div>
+      <span class="text-[25px] font-bold">My Angular Starter</span>
+    </div>
+    <div class="mt-2 flex flex-col gap-1">
+      <div class="mt-2">
+        <label class="block text-sm text-gray-600" for="name">{{'txt.username' | i18n }}</label>
+        <input class="mt-2 w-full px-2 py-1 text-gray-700 bg-red-100 rounded focus:outline-none" type="text" [(ngModel)]="username" />
+      </div>
+      <div class="mt-2">
+        <label class="block text-sm text-gray-600" for="password">{{'txt.password' | i18n }}</label>
+        <input class="mt-2 w-full px-2 py-1 text-gray-700 bg-red-100 rounded focus:outline-none" type="password" [(ngModel)]="password" />
+      </div>
+    </div>
+    <button class="mt-4 w-full h-[30px] flex justify-center items-center">
+      <div class="w-[25%] h-[30px] bg-red-600 text-white rounded-md cursor-pointer flex justify-center items-center" (click)="login()">
+        <span class="text-[16px]">{{'txt.login' | i18n }}</span>
+      </div>
+    </button>
+    <div class="mt-4 flex justify-center items-center gap-2 leading-[20px]">
+      <div class="text-[15px] cursor-pointer" (click)="setLanguage('th')" [ngClass]="{'font-bold': (language$ | async) === 'th'}">ภาษาไทย</div>
+      <div class="h-[20px] w-[2px] bg-red-600"></div>
+      <div class="text-[15px] cursor-pointer" (click)="setLanguage('en')" [ngClass]="{'font-bold': (language$ | async) === 'en'}">English</div>
+    </div>
+  </div>
+</div>

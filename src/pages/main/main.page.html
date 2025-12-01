@@ -1,0 +1,16 @@
+<div class="w-full">
+  <div class="w-full">
+    <main-header />
+    <div class="w-full min-h-[calc(100vh-115px)] grid grid-cols-[180px_auto]">
+      <aside>
+        <main-sidebar />
+      </aside>
+      <main class="p-8">
+        <router-outlet />
+      </main>
+    </div>
+    <main-footer />
+  </div>
+  <modal *ngIf="openModal" [data]="modalData" />
+  <loader *ngIf="isLoad" />
+</div>
